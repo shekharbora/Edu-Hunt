@@ -11,7 +11,7 @@ group :production do
     gem 'rails_12factor',"0.0.2"    
 end
 gem 'devise', '~> 3.4.0'
-# group :assets do
+group :assets do
 	gem "therubyracer"
 	gem "less-rails"
   gem 'twitter-bootstrap-rails'
@@ -23,7 +23,7 @@ gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.1.0'
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
-# end
+end
 
 
 # Use jquery as the JavaScript library
