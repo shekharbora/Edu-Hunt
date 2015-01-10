@@ -1,0 +1,23 @@
+<div class="container">
+	<div class="row" style="background: #fff;padding: 34px;">
+		<div class="cal-lg-12" style="background: #fff;padding: 34px;">
+			<table class="table-bordered col-lg-12">
+			<thead>
+			    <tr>
+			      <th>Subject</th>
+			      <th>Title</th>
+			      <th>File</th>			      
+			    </tr>
+			  </thead>
+			<%# abort @search.to_yaml%>
+				<% @search.each do |f|%>
+					<tr>
+						<td><%= f.subject%></td>
+						<td><%= f.title%></td>
+						<td><button><%= link_to 'Download',f.file.url, :target=>'_blank' ,:download=>true%></button></td>
+					</tr>
+				<%end%>
+			</table>
+		</div>
+	</div>
+</div>

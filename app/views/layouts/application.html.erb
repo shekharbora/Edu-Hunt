@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>EduHunt</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+ <div class="navbar navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <%= link_to 'Home',home_index_path, :class=>"brand"%>
+        <div class="nav-collapse">
+          <ul class="nav">
+             <% if user_signed_in? %>
+                    <li>
+                        <!-- <a href="#about">Decuments</a> -->
+                        <%= link_to 'Decuments',books_path%>
+                    </li>
+                    <%end%>
+                    <li>
+                        <a href="#services">Services</a>
+                    </li>                   
+                    <% if user_signed_in? %>
+                    <li style="float:right;">
+                        <!-- <a href="#contact">Contact</a> -->
+                        <%= link_to 'Log Out', logout_path%>
+                    </li>
+                    <%else%>
+                     <li>
+                        <!-- <a href="#contact">Contact</a> -->
+                        <%= link_to 'Log In', user_session_path%>
+                        <%#= link_to 'Sing Up', new_user_registration_path%>
+                    </li>
+                    <li>
+                       <%= link_to 'Sing Up', new_user_registration_path%>
+                    </li>
+                    <%end%>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ <div class="container">
+    <div class="row">
+      <div class="span9"><%= yield %></div>
+      
+    </div>
+  </div>
+</body>
+</html>
