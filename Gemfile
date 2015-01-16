@@ -6,6 +6,8 @@ ruby '1.9.3'
 gem 'rails', '4.2.0.rc1'
 # Use mysql as the database for Active Record
 gem 'mysql2'
+gem 'bootstrap_form'
+gem "nested_form"
 group :production do
     gem 'pg',    '0.15.1'
     gem 'rails_12factor',"0.0.2"    
@@ -45,9 +47,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # gem 'capistrano-rails', group: :development
 gem 'rmagick'
 gem 'carrierwave'
+gem "paperclip", "~> 4.2"
+gem "paperclip-dropbox", ">= 1.1.7"
 # gem 'carrierwave-google_drive', '~> 0.0.2'
 gem 'carrierwave-dropbox'
-# gem 'protected_attributes'
+gem 'protected_attributes'
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
   gem 'debugger'

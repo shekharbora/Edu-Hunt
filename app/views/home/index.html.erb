@@ -1,19 +1,19 @@
-    <!-- Full Width Image Header -->
-    <header class="header-image">
-        <div class="headline">
-            <div class="container">
-                <p>Enter Topic</p>
-                <%=form_tag home_search_path , :id=>'frm1',:method=>:post do %>
-                <input type="text" class="span5" name="search_p" auto-complete='true'>
-                <button>Search</button>
-                <%end%>
-                <div class="search_data container">
-                    
-                </div>
-            </div>
-        </div>
-    </header>
-
-           
+<div class="wrapper">
+    <div class="comingsoonBlk">
+    <h1>Enter Topic</h1>
+    
+    <div class="socialMedia">
+        <a href="#" data-placement="top" data-original-title="Find us on via facebook"><img style="width:45px" src="assets/img/facebook.png" alt="facebook" title="facebook"></a>
+        <a href="#" data-placement="top" data-original-title="Find us on via twitter"><img style="width:45px" src="assets/img/twitter.png" alt="twitter" title="twitter"></a>
+        <a href="#" data-placement="top" data-original-title="Find us on via youtube"><img style="width:45px" src="assets/img/youtube.png" alt="youtube" title="youtube"></a>
+    </div>
+        <%=form_tag home_search_path , :id=>'frm1',:method=>:post do %>
+            <span class="email"><input type="text"  name="search_p" auto-complete='true'></span>
+            <span class="subscribe"><button class="btn btn-warning pull-right" type="submit">SEARCH</button></span>
+        <%end%>
+        <br class="clr">
+    </div>
+</div>
+<div class="copyright"> eduhunt.com &copy; 2015.</div>
  
     <!-- /.container -->

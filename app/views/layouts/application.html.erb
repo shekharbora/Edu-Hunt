@@ -4,11 +4,15 @@
   <title>EduHunt</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag :defaults, "nested_form" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
  <div class="navbar navbar-fixed-top">
     <div class="navbar-inner">
+       <a class="brand" href="#">      
+          <img src="/assets/img/logo_main.jpg" alt="" style="width:50px;">
+        </a>
       <div class="container">
         <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
           <span class="icon-bar"></span>
@@ -28,16 +32,44 @@
                         <a href="#services">Services</a>
                     </li>                   
                     <% if user_signed_in? %>
-                    <li style="float:right;">
+                    <li>
+
                         <!-- <a href="#contact">Contact</a> -->
-                        <%= link_to 'Log Out', logout_path%>
+                        <%#= link_to 'Edit Profile', edit_user_registration_path%>
                     </li>
+
+                    <li>
+                        <!-- <a href="#contact">Contact</a> -->
+                        
+                    </li>
+
+                    <li>
+                        <!-- <a href="#contact">Contact</a> -->
+                        
+                    </li>
+                     <ul class="nav">
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <span>Welcome : <%= current_user.username%></span>
+                              <%= image_tag current_user.avatar.url, :style=>'width:50px;border: 1px solid;'%>
+                            <b class="caret"></b>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><%= link_to 'Edit Profile', edit_user_registration_path%></li>
+                                <li><%= link_to 'Log Out', logout_path%></li>
+                                <li><a href="#">Link</a></li>
+                                <li><a href="#">Link</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    
                     <%else%>
                      <li>
                         <!-- <a href="#contact">Contact</a> -->
                         <%= link_to 'Log In', user_session_path%>
                         <%#= link_to 'Sing Up', new_user_registration_path%>
                     </li>
+                   
                     <li>
                        <%= link_to 'Sing Up', new_user_registration_path%>
                     </li>
@@ -48,9 +80,9 @@
     </div>
   </div>
 
- <div class="container">
-    <div class="row">
-      <div class="span9"><%= yield %></div>
+ <div>
+    <div>
+      <div><%= yield %></div>
       
     </div>
   </div>

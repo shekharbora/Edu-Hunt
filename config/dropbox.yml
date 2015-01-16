@@ -1,0 +1,8 @@
+app_key: "mjr86sn6shslu3k"
+app_secret: "rz1jo32l2t6n215"
+access_token: "hh63e45myfmjm8xk"
+access_token_secret: "d65cozu3t09v0g5"
+user_id: "353436759"
+access_type: "app_folder"
+
+# rake dropbox:authorize APP_KEY=uyv3wgiewtkz0rx APP_SECRET=93mhglxacc6ylt0 ACCESS_TYPE=dropbox|app_folder
