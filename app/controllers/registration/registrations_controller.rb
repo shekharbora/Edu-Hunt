@@ -31,7 +31,7 @@ class Registration::RegistrationsController < Devise::RegistrationsController
   # GET /resource/sign_up
   def new
    @user= User.new
-   @user.build_user_image
+   # @user.build_user_image
     build_resource({})
     # set_minimum_password_length
     yield resource if block_given?
