@@ -4,7 +4,7 @@ class BooksController < ApplicationController
   respond_to :html
 
   def index
-    @books = Book.all
+    @books = Book.all.where(:user_id=>current_user.id)
     respond_with(@books)
   end
 
@@ -21,7 +21,8 @@ class BooksController < ApplicationController
   end
 
   def create
-    @book = Book.new(book_params)
+    @book = current_user.books.new(book_params)
+    # abort @book.to_yaml
     @book.save
     respond_with(@book)
   end

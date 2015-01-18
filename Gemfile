@@ -52,6 +52,10 @@ gem "paperclip-dropbox", ">= 1.1.7"
 # gem 'carrierwave-google_drive', '~> 0.0.2'
 gem 'carrierwave-dropbox'
 gem 'protected_attributes'
+gem 'fog', '>= 1.11.1'
+gem 'omniauth-facebook'
+gem 'omniauth'
+
 group :development, :test do
   # Call 'debugger' anywhere in the code to stop execution and get a debugger console
   gem 'debugger'

@@ -1,3 +1,4 @@
+<div class="container">
 <%- model_class = Book -%>
 <div class="page-header">
   <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
@@ -5,12 +6,11 @@
 <table class="table table-striped">
   <thead>
     <tr>
-      <th><%= model_class.human_attribute_name(:id) %></th>
+      
       <th><%= model_class.human_attribute_name(:subject) %></th>
       <th><%= model_class.human_attribute_name(:title) %></th>
       <th><%= model_class.human_attribute_name(:file) %></th>
       <th><%= model_class.human_attribute_name(:description) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
       <th><%=t '.actions', :default => t("helpers.actions") %></th>
     </tr>
@@ -18,12 +18,10 @@
   <tbody>
     <% @books.each do |book| %>
       <tr>
-        <td><%= link_to book.id, book_path(book) %></td>
-        <td><%= book.subject %></td>
+        <td><%= link_to book.subject, book_path(book) %></td>        
         <td><%= book.title %></td>
         <td><%= book.file %></td>
-        <td><%= book.description %></td>
-        <td><%= book.user_id %></td>
+        <td><%= book.description %></td>       
         <td><%=l book.created_at %></td>
         <td>
           <%= link_to t('.edit', :default => t("helpers.links.edit")),
@@ -42,3 +40,4 @@
 <%= link_to t('.new', :default => t("helpers.links.new")),
             new_book_path,
             :class => 'btn btn-primary' %>
+</div>

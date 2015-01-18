@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :authentications
+
   resources :books
   resources :home
   post 'home/search'
@@ -11,6 +13,7 @@ Rails.application.routes.draw do
   devise_scope :user do
     # match '/registration/registrations/update' => 'registrations#update', :as => :update
     match '/registration/registrations/create' => 'registrations#create', :via => :get, :as => :create
+    match '/auth/:provider/callback' => 'authentications#create', :via => :get
     # match '/registration/registrations/update' => 'registrations#update', :as => :update
     # match '/registration/registrations/create' => 'registrations#create', :as => :create
     # match '/registration/registrations/update_accordion' => 'registrations#update_accordion', :as => :update_accordion
