@@ -6,14 +6,14 @@ Rails.application.routes.draw do
   post 'home/search'
   root to: "home#index"
   # devise_for :users
-  devise_for :users, :path_names=> {:sign_up=> "signup",:sign_in=> "login", :sign_out=> "logout"}, :controllers => { :registrations => "registration/registrations" }
+  devise_for :users, :path_names=> {:sign_up=> "signup",:sign_in=> "login", :sign_out=> "logout"}, :controllers => { :registrations => "registration/registrations",:omniauth_callbacks=> "registration/omniauth_callbacks"  }
   # devise_scope :user do
   #     get 'logout' => 'devise/sessions#destroy'
   #   end
   devise_scope :user do
     # match '/registration/registrations/update' => 'registrations#update', :as => :update
     match '/registration/registrations/create' => 'registrations#create', :via => :get, :as => :create
-    match '/auth/:provider/callback' => 'authentications#create', :via => :get
+    # match '/auth/:provider/callback' => 'authentications#create', :via => :get
     # match '/registration/registrations/update' => 'registrations#update', :as => :update
     # match '/registration/registrations/create' => 'registrations#create', :as => :create
     # match '/registration/registrations/update_accordion' => 'registrations#update_accordion', :as => :update_accordion
